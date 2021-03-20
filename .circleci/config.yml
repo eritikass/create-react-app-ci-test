@@ -7,6 +7,11 @@ workflows:
   dgsdsd-workflow:
     jobs:
       - test
+      - lint
+      - build:
+          requires:
+            - test
+            - lint
 
 # jobs
 
@@ -17,6 +22,21 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: node --version
       - run: npm ci
       - run: npm test
+
+  lint:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run lint
+
+  build:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run build
