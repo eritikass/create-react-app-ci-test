@@ -40,3 +40,9 @@ jobs:
       - checkout
       - run: npm ci
       - run: npm run build
+      - run: |
+          rm -rf README.md package*.json src/ public/
+          mv build/* .
+          git add .
+          git commit -m 'deploy to github pages'
+          git push -f origin gh-pages
