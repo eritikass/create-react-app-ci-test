@@ -42,4 +42,7 @@ pages:
   artifacts:
     paths:
       - public
+  environment:
+    name: pages
+    url: https://eritikass.gitlab.io/create-react-app-ci-test
 
