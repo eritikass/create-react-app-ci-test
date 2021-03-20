@@ -7,9 +7,11 @@ stages:
 image: node:12
 
 install:
+  stage: install
   script:
     - npm ci
 
 test:
+  stage: test
   script:
     - npm run test
