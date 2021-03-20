@@ -4,6 +4,7 @@ stages:
   - install
   - test
   - build
+  - deploy
 
 image: node:12
 
@@ -32,3 +33,13 @@ build:
   artifacts:
     paths:
       - build
+
+pages:
+  stage: deploy
+  script:
+    - rm -fr public
+    - mv build public
+  artifacts:
+    paths:
+      - public
+
