@@ -29,3 +29,6 @@ build:
   stage: build
   script:
     - npm run build
+  artifacts:
+    paths:
+      - build
