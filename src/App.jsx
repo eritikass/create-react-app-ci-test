@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.jsx</code> and save to reload[2]!!!
+          Edit <code>src/App.jsx</code> and save to <span style={{color: 'red'}}>reload</span>!!!
         </p>
         <a
           className="App-link"
