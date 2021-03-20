@@ -43,6 +43,8 @@ jobs:
       - run: |
           rm -rf README.md package*.json src/ public/
           mv build/* .
+          git config --global user.email "circleci@example.com"
+          git config --global user.name "circleci pages deploy"
           git add .
           git commit -m 'deploy to github pages'
           git push -f origin gh-pages
