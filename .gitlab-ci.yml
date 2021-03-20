@@ -1,7 +1,15 @@
 # .gitlab-ci.yml
 
+stages:
+  - install
+  - test
+
 image: node:12
 
 install:
   script:
     - npm ci
+
+test:
+  script:
+    - npm run test
